@@ -9,6 +9,7 @@ require 'json'
 require 'open-uri'
 
 puts "Cleaning database..."
+Dose.destroy_all
 Ingredient.destroy_all
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 
@@ -20,14 +21,3 @@ ingredients["drinks"].each do |ingredient|
   Ingredient.create(name: name)
 end
 puts "finished"
-
-
-mojito = Cocktail.create(name: "Mojito")
-
-Dose.create(cocktail: mojito, ingredient: Ingredient.all.sample, description: "A spoon")
-Dose.create(cocktail: mojito, ingredient: Ingredient.all.sample, description: "1 tblspn")
-Dose.create(cocktail: mojito, ingredient: Ingredient.all.sample, description: "A shot")
-Dose.create(cocktail: mojito, ingredient: Ingredient.all.sample, description: "A teaspoon")
-Dose.create(cocktail: mojito, ingredient: Ingredient.all.sample, description: "50ml")
-
-
