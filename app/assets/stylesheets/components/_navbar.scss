@@ -8,5 +8,21 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 62px;
+  margin-left: 4px;
+}
+
+.navbar-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  h1{
+    margin-bottom: 0;
+  }
+}
+
+.nav-link {
+  font-size: 18px;
 }
